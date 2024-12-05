@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Daily & Weekly Challenges</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .dice {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .challenge-input {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .challenge-input label {
+            margin-right: 10px;
+        }
+        .pool {
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .log-container {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .log-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .log-container li {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Daily & Weekly Challenge Generator</h1>
+    <button onclick="rollDice('daily')">Roll a Daily Challenge!</button>
+    <button onclick="rollDice('weekly')">Roll a Weekly Challenge!</button>
+    <div class="result" id="result"></div>
+    <div class="dice-container">
+        <div class="dice" id="dice1">1</div>
+        <div class="dice" id="dice2">1</div>
+    </div>
+
+    <h2>Daily Challenges</h2>
+    <div id="daily-challenges"></div>
+
+    <h2>Weekly Challenges</h2>
+    <div id="weekly-challenges"></div>
+
+    <button onclick="saveChallenges()">Save Challenges</button>
+    <button onclick="loadChallenges()">Load Challenges</button>
+
+    <div class="log-container">
+        <h2>Challenge Log</h2>
+        <ul id="log"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
